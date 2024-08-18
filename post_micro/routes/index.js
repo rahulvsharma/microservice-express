@@ -1,7 +1,7 @@
 import { Router } from "express";
-// import AuthRoutes from "./postRoutes.js";
+import PostRoutes from "./postRoutes.js";
 const routes = Router();
 
-// routes.use('/api', AuthRoutes);
+routes.use("/api", PostRoutes);
 
 export default routes;

@@ -1,8 +1,10 @@
 import { Router } from "express";
-// import AuthController from "../controller/AuthController.js";
+import PostController from "../controller/PostController.js";
+import authMiddleware from "../middleware/AuthMiddleware.js";
 
-// const AuthRoutes = Router();
+const PostRoutes = Router();
 
-// AuthRoutes.post('/auth/register', AuthController.register);
+PostRoutes.get("/post", PostController.index);
+PostRoutes.post("/post", authMiddleware, PostController.store);
 
-// export default AuthRoutes;
+export default PostRoutes;
